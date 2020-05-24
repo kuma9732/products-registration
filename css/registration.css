@@ -1,0 +1,382 @@
+:root{
+  --body-font: century, "Noto Sans JP", sans-serif;
+  --first-color: rgb( 24, 15, 182);
+  --secondary-color: rgb(185, 183, 233);
+  --third-color: rgb(231, 231, 248);
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 5% 45% 45% 5%;
+}
+
+/* --------------------------------
+ * header
+ * -------------------------------- */
+ #header{
+  width: 100%;
+  height: 80px;
+  background: #000;
+}
+
+#header h1{
+  font-size: 24px;
+  margin-bottom: 0;
+  padding-top: 25px;
+  padding-left: 20px;
+  color: #fff;
+  margin-top: 0;
+}
+
+.header_top span{
+  display: inline-block;
+}
+
+.menu-toggler{
+  z-index: 100;
+  border: rgb(35, 24, 99) 1px solid;
+  cursor: pointer;
+  display: block;
+  background: var(--first-color);
+  cursor: pointer;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 80px;
+}
+
+.menu-toggler > span,
+.menu-toggler > span::before,
+.menu-toggler > span::after{
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 3.5px;
+  background: #fff;
+  transition: .5s cubic-bezier(0.77, 0, 0.175, 1);
+  left: 30%;
+}
+
+.menu-toggler > span::before{
+  top: -10px;
+  padding-left: 0;
+  left: 0%;
+}
+
+.menu-toggler > span::after{
+  top: 10px;
+  left: 0%;
+}
+
+.menu-toggler.active > span{
+  background: transparent;
+}
+
+.menu-toggler.active > span::before,
+.menu-toggler.active > span::after{
+  background: #fff;
+  top: 0;
+}
+
+.menu-toggler.active > span::before{
+  transform: rotate(-225deg);
+}
+
+.menu-toggler.active > span::after{
+  transform: rotate(225deg);
+}
+
+#menu{
+  position: fixed;
+  top: -700px;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  opacity: 0.9;
+  background: #000;
+  font-size: 16px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+#menu span{
+  display: block;
+  font-size: 18px;
+  padding: 0;
+}
+
+#menu ul{
+  display:block;
+  padding-top: 80px;
+  text-align: center;
+  margin: 0;
+}
+
+#menu ul li{
+  display:block;
+  border-bottom: #fff 1px solid;
+  height: 80px;
+  width: 100%;
+}
+
+#menu ul li:nth-child(1){
+  padding-top: 0;
+  border-top: #fff 1px solid;
+}
+
+#menu ul li a{
+  text-decoration: none;
+  color: #ddd;
+  height: 100%;
+  width: 100%;
+  line-height: 4;
+}
+  
+/* --------------------------------
+ * Form Container
+ * -------------------------------- */
+.container{
+  grid-column: 2/4;
+  border-radius: 10px;
+  border: var(--first-color) 2px solid;
+  background: var(--third-color);
+  padding: 10px 20px 30px 20px;
+  margin: 50px 10px 50px 10px;
+}
+
+.logo{
+  color: #000;
+  font-weight: 100;
+  border-bottom: var(--first-color) 2px solid;
+  font-size: 28px;
+  border-radius: 5px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 10px 10px;
+}
+
+form{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(50px,360px));
+  grid-template-rows: repeat(auto-fit,minmax(40px,1fr));
+  justify-content: center;
+}
+
+form > input,
+form > select{
+  grid-column: 1;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  border: none;
+  font-size: 1.1rem;
+  border: 2px solid #000;
+}
+
+input[type="submit"]{
+  color: #fff;
+  font-weight: 100;
+  background: var(--first-color);
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input,
+option{
+  text-align: center;
+}
+
+/* --------------------------------
+ * Notification
+ * -------------------------------- */
+.notifications{
+  color: #fff;
+  background: red;
+  text-align: center;
+  font-size: 25px;
+  display: none;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  margin: 0;
+}
+
+.inserted,
+.updated{
+  background: green;
+}
+
+/* --------------------------------
+ * selection
+ * -------------------------------- */
+.selection{
+  grid-column: 2/4;
+}
+
+.selection h2{
+  border-bottom: var(--first-color) 2px solid;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px auto 10px auto;
+}
+
+.product-box > div{
+  background: #4e4edf4d;
+  padding: 8px;
+  border: 1px solid rgb(4, 4, 53);
+  display: grid;
+  grid-template-columns: 1fr 1fr 50px;
+  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  grid-column-gap: 10px;
+  width: 80%;
+  margin: 0 auto;
+  grid-column: 2/4;
+}
+
+.product-box{
+  padding: 5px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.product-box .product-image{
+  grid-column: 1/2;
+  grid-row: 1/5;
+  width: 150px;
+  height: 150px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.product-box .product-image img{
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.size,.capacitance,
+.voltage,.price{
+  color: #000;
+  font-size: 18px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.size{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.capacitance{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.voltage{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.price{
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+.product-box .product-icon{
+  grid-column: 3/4;
+  grid-row: 2/4;
+}
+
+.delete,
+.update{
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+.delete{
+  background-image: url(../img/trash-alt-black.svg);
+  margin-right: 10px;
+}
+
+.update{
+  background-image: url(../img/edit-black.svg);
+}
+
+/* --------------------------------
+ *  Update Form
+ * -------------------------------- */
+#for-update{
+  background: #000;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: none;
+}
+
+#for-update h1,
+#close-update h1{
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+#for-update h1{
+  margin: 100px auto 50px auto;
+  color: #fff;
+}
+
+#close-update h1{
+  font-weight: cursive;
+}
+
+#close-update{
+  border: 1px solid #fff;
+  border-radius: 50%;
+  width: 40px;
+  background-color: #000;
+}
+
+#close-update:hover{
+  cursor: pointer;
+}
+/* --------------------------------
+ * footer
+ * -------------------------------- */
+ footer{
+  background-color: black;
+  display: inline-block;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #fff;
+}
+
+footer p{
+  margin-top: 18px;
+  color: #fff;
+}
+/* ==== PC版 ==== */
+@media (min-width: 768px){ 
+  main{
+    display: grid;
+    grid-template-columns: 25% 25% 25%  25%;
+  }
+
+}
+
+/* ==== PC版 (大) ==== */
+@media (min-width: 1025px){
+}

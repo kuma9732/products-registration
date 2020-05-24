@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>商品登録ページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/registration.css">
+</head>
+<header>
+  <div id="header">
+    <h1>セラコン株式会社</h1>
+    <div id="navi">
+      <button class="menu-toggler">
+      <span></span>
+      </button>
+    <nav id="menu">
+      <ul>
+      <li><a href="index.html"><span>HOME</span></a></li>
+      <li><a href="products.html"><span>製品情報</span></a></li>
+      <li><a href="company.html"><span>会社情報</span></a></li>
+      <li><a href="ir.html"><span>IR情報</span></a></li>
+      <li><a href="recruit.html"><span>採用情報</span></a></li>
+      <li><a href="contact.html"><span>お問い合わせ</span></a></li>
+      </ul>
+    </nav>
+    </div>
+  </div>
+  </header>
+<body>
+  <main>
+    <!-- Notification  -->
+    <div class="notification">
+      <h1 class="notifications fill-all">Fill All Fields</h1>
+      <h1 class="notifications inserted">Added Successfully</h1>
+      <h1 class="notifications updated">Updated Successfully</h1>
+    </div>  
+    <!-- Form Container -->
+    <div class="container">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <h1 class="logo">商品登録</h1>
+        <select name="category" id="">
+          <option value="first">アルミ電解コンデンサ</option>
+          <option value="third">積層セラミックコンデンサ</option>
+          <option value="second">リチウム電池</option>
+        </select>
+        <input type="text" name="size" placeholder="Size">
+        <input type="text" name="capacitance" placeholder="Capacitance">
+        <input type="text" name="voltage" placeholder="Voltage">
+        <input type="number" name="price" placeholder="Price">
+        <input type="file" name="image">
+        <input type="submit" name="submit" placeholder="Add">
+      </form>
+    </div>
+    <!-- Selection Form -->
+    <div class="selection">
+      <h2>アルミ電解コンデンサ</h2>
+      <div class="first"></div>
+      <h2>積層セラミックコンデンサ</h2>
+      <div class="second"></div>
+      <h2>リチウム電池</h2>
+      <div class="third"></div>
+    </div>
+    <!-- Update Form -->
+    <div id="for-update">
+      <form action="/" method="post" enctype="multipart/form-data">
+        <h1 class="logo">Registration</h1>
+        <input type="text" name="newsize" placeholder="New Size">
+        <input type="text" name="newcapacitance" placeholder="New capacitance">
+        <input type="text" name="newvoltage" placeholder="New Voltage">
+        <input type="text" name="newprice" placeholder="New Price">
+        <input type="submit" name="update" value="Update">
+      </form>
+      <h1 id="close-update">×</h1>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2020 CERACON Co., Ltd.</p>
+  </footer>  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/registration.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
