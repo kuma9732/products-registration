@@ -105,9 +105,9 @@ $(function(){
                                     <div class="product-image">
                                         <img class="image" src="${image}">
                                     </div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">直径 : ${size}[mm]</div>                                 
+                                    <div class="capacitance">静電容量 : ${capacitance}[μF]</div>                                 
+                                    <div class="voltage">定格電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                
                                     <div class="product-icon">
                                         <div data-id="${key}" class="delete"></div>
@@ -123,9 +123,9 @@ $(function(){
                                     <div class="product-image">
                                         <img class="image" src="${image}">
                                     </div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">サイズ規格 : ${size}</div>                                 
+                                    <div class="capacitance">静電容量 : ${capacitance}[μF]</div>                                 
+                                    <div class="voltage">定格電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                                
                                     <div class="product-icon">
                                         <div data-id="${key}" class="delete"></div>
@@ -141,9 +141,9 @@ $(function(){
                                     <div class="product-image">
                                         <img class="image" src="${image}">
                                     </div>
-                                    <div class="size">サイズ : ${size}</div>                                 
-                                    <div class="capacitance">静電容量 : ${capacitance}μF</div>                                 
-                                    <div class="voltage">定格電圧 : ${voltage}V</div>                                   
+                                    <div class="size">直径 : ${size}[mm]</div>                                 
+                                    <div class="capacitance">公称容量 : ${capacitance}[mAh]</div>
+                                    <div class="voltage">公称電圧 : ${voltage}[V]</div>                                   
                                     <div class="price">価格 : ${price}円</div>                               
                                     <div class="product-icon">
                                         <div data-id="${key}" class="delete"></div>
@@ -200,12 +200,13 @@ $(function(){
                       newcapacitance = $('[name=newcapacitance]').val(),
                           newvoltage = $('[name=newvoltage]').val(),
                             newprice = $('[name=newprice]').val(),
+                           newsizeNumber = newsize.replace(/[^0-9]/g, '');
                     newcapacitanceNumber = newcapacitance.replace(/[^0-9]/g, '');
                         newvoltageNumber = newvoltage.replace(/[^0-9]/g, '');
                           newpriceNumber = newprice.replace(/[^0-9]/g, '');
                     
                     selection.child(thekey).update({
-                             size : newsize,
+                             size : newsizeNumber,
                       capacitance : newcapacitanceNumber,
                           voltage : newvoltageNumber,
                             price : newpriceNumber,
