@@ -147,7 +147,8 @@ main{
   border: var(--first-color) 2px solid;
   background: var(--third-color);
   padding: 10px 20px 30px 20px;
-  margin: 50px 10px 50px 10px;
+  margin: 20px auto;
+  max-width: 650px;
 }
 
 .logo{
@@ -225,7 +226,7 @@ option{
 .selection h2{
   border-bottom: var(--first-color) 2px solid;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   margin: 20px auto 10px auto;
 }
@@ -235,12 +236,12 @@ option{
   padding: 8px;
   border: 1px solid rgb(4, 4, 53);
   display: grid;
-  grid-template-columns: 1fr 1fr 50px;
-  grid-template-rows: 1fr 1fr 1fr 1fr ;
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  grid-column: 2/4;
+  max-width: 270px;
 }
 
 .product-box{
@@ -248,13 +249,14 @@ option{
   border-radius: 8px;
   width: 100%;
   max-width: 500px;
+  display: inline-block;
 }
 
 .product-box .product-image{
   grid-column: 1/2;
-  grid-row: 1/5;
-  width: 150px;
-  height: 150px;
+  grid-row: 1/4;
+  width: 100px;
+  height: 100px;
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -268,7 +270,7 @@ option{
 .size,.capacitance,
 .voltage,.price{
   color: #000;
-  font-size: 18px;
+  font-size: 14px;
   display: flex; 
   align-items: center; 
   justify-content: center; 
@@ -293,8 +295,11 @@ option{
 }
 
 .product-box .product-icon{
-  grid-column: 3/4;
-  grid-row: 2/4;
+  grid-column: 1/2;
+  grid-row: 4/5;
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
 }
 
 .delete,
@@ -334,7 +339,7 @@ option{
   line-height: 1.2;
 }
 #for-update h1{
-  margin: 100px auto 50px auto;
+  margin: 50px auto;
   color: #fff;
 }
 
@@ -370,11 +375,66 @@ footer p{
 }
 /* ==== PC版 ==== */
 @media (min-width: 768px){ 
-  main{
-    display: grid;
-    grid-template-columns: 25% 25% 25%  25%;
+  .selection h2{
+    font-size: 24px;
   }
 
+  .product-box{
+    max-width: 490px;
+  }
+
+  .product-box > div{
+    grid-template-columns: 1fr 1fr 50px;
+    max-width: 490px;
+    grid-column: 2/4;
+  }
+  
+  .product-box .product-image{
+    grid-row: 1/5;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .size,.capacitance,
+  .voltage,.price{
+    font-size: 18px;
+  }
+  
+  .size{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  .capacitance{
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+  .voltage{
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+  
+  .price{
+    grid-column: 2/3;
+    grid-row: 4/5;
+  }
+  
+  .product-box .product-icon{
+    grid-column: 3/4;
+    grid-row: 2/4;
+    margin-left: 10px;
+    display: initial;
+  }
+  
+  .delete,
+  .update{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+  }
+  
+  
 }
 
 /* ==== PC版 (大) ==== */
