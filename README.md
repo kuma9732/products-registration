@@ -1,18 +1,14 @@
 # products-registration
 ★概要
-サイト訪問者は掲載されている商品を選択し、注文することができます。
-※このサイトは商品登録ページと注文内容確認ページと合わせて使います。
+商品掲載者は自社の商品をfirebaseのDatabase上にアップすることが出来ます。
+※このサイトは商品注文ページと注文内容確認ページと合わせて使います。
 https://github.com/kuma9732/products-order
 https://github.com/kuma9732/order-confirmation
 
 ★機能
-firebaseのDatabaseに登録された商品データをサイトに反映させる機能
-選択した商品をカートに登録する機能
-選択された商品数を表示する機能
-選択された商品を表示する機能
-選択された商品を削除する機能
-選択された商品の合計金額を算出する機能
-カート内の内容をfirebaseのDatabaseに登録する機能
+商品をfirebaseのDatabaseに登録する機能
+登録したdataを削除する機能
+登録したdataを修正する機能
 
 ★使われているもの
 HTML5/CSS3、jQuery、firebase
