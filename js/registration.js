@@ -196,16 +196,17 @@ $(function(){
 
                 $('[name=update]').click(function(e){
                     e.preventDefault();
-                    let newsize = $('[name=newsize]').val(),
+                    let theid = $('[name=id]').val(),
+                    newsize = $('[name=newsize]').val(),
                       newcapacitance = $('[name=newcapacitance]').val(),
                           newvoltage = $('[name=newvoltage]').val(),
-                            newprice = $('[name=newprice]').val(),
+                            newprice = $('[name=newprice]').val();
                            newsizeNumber = newsize.replace(/[^0-9]/g, '');
                     newcapacitanceNumber = newcapacitance.replace(/[^0-9]/g, '');
                         newvoltageNumber = newvoltage.replace(/[^0-9]/g, '');
                           newpriceNumber = newprice.replace(/[^0-9]/g, '');
                     
-                    selection.child(thekey).update({
+                    selection.child(theid).update({
                              size : newsizeNumber,
                       capacitance : newcapacitanceNumber,
                           voltage : newvoltageNumber,
@@ -216,12 +217,12 @@ $(function(){
                                 Notification('update');           
                                 $('#for-update').slideUp();
                                 $('#header').slideDown();
-                        }
-                    })
+                        };
+                    });
                 });           
             });
         } else {
             console.log('No data found')
-        }
+        };
    });
 });
