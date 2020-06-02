@@ -184,6 +184,7 @@ input[type="submit"]{
   color: #fff;
   font-weight: 100;
   background: var(--first-color);
+  cursor: pointer;
 }
 
 input[type="number"]::-webkit-inner-spin-button {
@@ -309,6 +310,7 @@ option{
   width: 30px;
   height: 30px;
   display: inline-block;
+  cursor: pointer;
 }
 
 .delete{
